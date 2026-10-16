@@ -1,0 +1,60 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 300" font-family="DejaVu Sans, Arial, sans-serif" font-size="13">
+  <title>What happens when you open https://example.com</title>
+  <rect width="960" height="300" fill="#ffffff"/>
+  <defs>
+    <marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+      <path d="M0,0 L10,5 L0,10 z" fill="#444"/>
+    </marker>
+  </defs>
+  <text x="480" y="30" text-anchor="middle" font-weight="bold" font-size="16">Opening https://example.com — every step must work, in this order</text>
+
+  <g>
+    <rect x="15" y="60" width="140" height="150" rx="8" fill="#eef5ff" stroke="#6a9bd8"/>
+    <text x="85" y="88" text-anchor="middle" font-weight="bold">1. Link</text>
+    <text x="85" y="115" text-anchor="middle">Cable plugged /</text>
+    <text x="85" y="133" text-anchor="middle">Wi-Fi joined</text>
+  </g>
+  <g>
+    <rect x="170" y="60" width="140" height="150" rx="8" fill="#eef5ff" stroke="#6a9bd8"/>
+    <text x="240" y="88" text-anchor="middle" font-weight="bold">2. IP address</text>
+    <text x="240" y="115" text-anchor="middle">Router gave you</text>
+    <text x="240" y="133" text-anchor="middle">192.168.1.23</text>
+    <text x="240" y="151" text-anchor="middle">(DHCP)</text>
+  </g>
+  <g>
+    <rect x="325" y="60" width="140" height="150" rx="8" fill="#eef5ff" stroke="#6a9bd8"/>
+    <text x="395" y="88" text-anchor="middle" font-weight="bold">3. Gateway</text>
+    <text x="395" y="115" text-anchor="middle">You can reach</text>
+    <text x="395" y="133" text-anchor="middle">the router at</text>
+    <text x="395" y="151" text-anchor="middle">192.168.1.1</text>
+  </g>
+  <g>
+    <rect x="480" y="60" width="140" height="150" rx="8" fill="#fff6e0" stroke="#b07d00"/>
+    <text x="550" y="88" text-anchor="middle" font-weight="bold">4. DNS</text>
+    <text x="550" y="115" text-anchor="middle">"example.com?"</text>
+    <text x="550" y="133" text-anchor="middle">→ 198.51.100.10</text>
+  </g>
+  <g>
+    <rect x="635" y="60" width="140" height="150" rx="8" fill="#eef5ff" stroke="#6a9bd8"/>
+    <text x="705" y="88" text-anchor="middle" font-weight="bold">5. Route out</text>
+    <text x="705" y="115" text-anchor="middle">Router NATs you</text>
+    <text x="705" y="133" text-anchor="middle">to its public IP</text>
+    <text x="705" y="151" text-anchor="middle">and forwards</text>
+  </g>
+  <g>
+    <rect x="790" y="60" width="155" height="150" rx="8" fill="#eaf7ea" stroke="#3c8c3c"/>
+    <text x="867" y="88" text-anchor="middle" font-weight="bold">6. Port</text>
+    <text x="867" y="115" text-anchor="middle">TCP connection</text>
+    <text x="867" y="133" text-anchor="middle">to port 443</text>
+    <text x="867" y="151" text-anchor="middle">(HTTPS) succeeds</text>
+  </g>
+
+  <line x1="155" y1="135" x2="168" y2="135" stroke="#444" stroke-width="2" marker-end="url(#a)"/>
+  <line x1="310" y1="135" x2="323" y2="135" stroke="#444" stroke-width="2" marker-end="url(#a)"/>
+  <line x1="465" y1="135" x2="478" y2="135" stroke="#444" stroke-width="2" marker-end="url(#a)"/>
+  <line x1="620" y1="135" x2="633" y2="135" stroke="#444" stroke-width="2" marker-end="url(#a)"/>
+  <line x1="775" y1="135" x2="788" y2="135" stroke="#444" stroke-width="2" marker-end="url(#a)"/>
+
+  <text x="480" y="250" text-anchor="middle" fill="#444">If any box fails, everything to its right fails too.</text>
+  <text x="480" y="272" text-anchor="middle" fill="#444">The troubleshooting runbook checks these boxes left to right.</text>
+</svg>

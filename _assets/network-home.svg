@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 420" font-family="DejaVu Sans, Arial, sans-serif" font-size="14">
+  <title>Your machine, your router, and the internet</title>
+  <rect width="960" height="420" fill="#ffffff"/>
+  <defs>
+    <marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#444"/>
+    </marker>
+  </defs>
+
+  <!-- LAN zone -->
+  <rect x="20" y="40" width="430" height="350" rx="12" fill="#eef5ff" stroke="#6a9bd8" stroke-dasharray="6 4"/>
+  <text x="36" y="66" font-weight="bold" fill="#2a5a98">Your local network (LAN) — 192.168.1.0/24</text>
+  <text x="36" y="86" fill="#2a5a98" font-size="12">private addresses: only meaningful inside this network</text>
+
+  <!-- Laptop -->
+  <rect x="50" y="130" width="170" height="110" rx="8" fill="#fff" stroke="#333"/>
+  <text x="135" y="155" text-anchor="middle" font-weight="bold">Your laptop</text>
+  <text x="135" y="180" text-anchor="middle" font-size="12">IP 192.168.1.23</text>
+  <text x="135" y="198" text-anchor="middle" font-size="12">gateway 192.168.1.1</text>
+  <text x="135" y="216" text-anchor="middle" font-size="12">DNS 192.168.1.1</text>
+
+  <!-- Phone -->
+  <rect x="50" y="280" width="170" height="70" rx="8" fill="#fff" stroke="#333"/>
+  <text x="135" y="308" text-anchor="middle" font-weight="bold">Phone</text>
+  <text x="135" y="330" text-anchor="middle" font-size="12">IP 192.168.1.40</text>
+
+  <!-- Router -->
+  <rect x="300" y="170" width="250" height="130" rx="8" fill="#fff6e0" stroke="#b07d00" stroke-width="2"/>
+  <text x="425" y="196" text-anchor="middle" font-weight="bold">Router (the gateway)</text>
+  <text x="425" y="220" text-anchor="middle" font-size="12">LAN side: 192.168.1.1</text>
+  <text x="425" y="240" text-anchor="middle" font-size="12">WAN side: 203.0.113.45</text>
+  <text x="425" y="264" text-anchor="middle" font-size="12">hands out IPs (DHCP)</text>
+  <text x="425" y="282" text-anchor="middle" font-size="12">rewrites addresses (NAT)</text>
+
+  <line x1="220" y1="185" x2="298" y2="215" stroke="#444" stroke-width="2" marker-end="url(#a)" marker-start="url(#a)"/>
+  <line x1="220" y1="315" x2="298" y2="270" stroke="#444" stroke-width="2" marker-end="url(#a)" marker-start="url(#a)"/>
+
+  <!-- Internet -->
+  <ellipse cx="740" cy="235" rx="110" ry="70" fill="#f2f2f2" stroke="#666"/>
+  <text x="740" y="230" text-anchor="middle" font-weight="bold">Internet</text>
+  <text x="740" y="250" text-anchor="middle" font-size="12">(via your ISP)</text>
+  <line x1="550" y1="235" x2="628" y2="235" stroke="#444" stroke-width="2" marker-end="url(#a)" marker-start="url(#a)"/>
+  <text x="589" y="225" text-anchor="middle" font-size="11">public IP</text>
+
+  <!-- Servers -->
+  <rect x="770" y="40" width="170" height="70" rx="8" fill="#fff" stroke="#333"/>
+  <text x="855" y="68" text-anchor="middle" font-weight="bold">DNS server</text>
+  <text x="855" y="90" text-anchor="middle" font-size="12">1.1.1.1</text>
+  <rect x="770" y="330" width="170" height="70" rx="8" fill="#fff" stroke="#333"/>
+  <text x="855" y="358" text-anchor="middle" font-weight="bold">example.com</text>
+  <text x="855" y="380" text-anchor="middle" font-size="12">198.51.100.10, port 443</text>
+  <line x1="780" y1="173" x2="815" y2="112" stroke="#444" stroke-width="2" marker-end="url(#a)"/>
+  <line x1="780" y1="297" x2="815" y2="328" stroke="#444" stroke-width="2" marker-end="url(#a)"/>
+</svg>

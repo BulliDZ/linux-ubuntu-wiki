@@ -1,0 +1,67 @@
+# .gitignore — Linux Ubuntu Wiki
+# Rule of thumb: if it's personal, generated, or secret, it doesn't belong in git.
+
+# ---------------------------------------------------------------------------
+# Obsidian: allow-list. Only the SHARED settings are committed; everything else
+# in .obsidian/ is personal and would cause `git pull` conflicts for readers.
+# ---------------------------------------------------------------------------
+.obsidian/*
+# app.json = link format (relative paths, no [[wikilinks]])
+# templates.json = templates folder is _templates/
+# core-plugins.json = which core plugins are on by default
+!.obsidian/app.json
+!.obsidian/templates.json
+!.obsidian/core-plugins.json
+# Everything else stays local, including:
+#   workspace.json, workspace-mobile.json   open tabs and pane layout
+#   community-plugins.json, plugins/         personal plugin choices (see CONTRIBUTING)
+#   appearance.json, themes/, snippets/      looks
+#   hotkeys.json, graph.json, bookmarks.json personal preferences
+
+# Obsidian trash (when "move deleted files to .trash" is on)
+.trash/
+
+# ---------------------------------------------------------------------------
+# Wiki conventions
+# ---------------------------------------------------------------------------
+# Reader scratch space: never synced, so it can't conflict or be overwritten.
+# The empty .gitkeep is committed so the folder exists after cloning.
+_personal/*
+!_personal/.gitkeep
+
+# Local-only working notes, e.g. ROADMAP-kali.LOCAL.md, NEXT-STEPS.LOCAL.md
+*.LOCAL.md
+
+# Pandoc exports: generated output, rebuild from the .md instead
+# (see _maintainers/export-to-docx-pdf.md)
+*.docx
+*.pdf
+custom-reference.docx
+
+# ---------------------------------------------------------------------------
+# Secrets safety net: rule 6 says no secrets ever; this catches accidents.
+# It does NOT replace reading `git diff` before you commit.
+# ---------------------------------------------------------------------------
+.env
+.env.*
+*.pem
+*.key
+*.p12
+*.pfx
+id_rsa*
+id_ed25519*
+id_ecdsa*
+*.kdbx
+known_hosts
+
+# ---------------------------------------------------------------------------
+# Editors and OS junk
+# ---------------------------------------------------------------------------
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+.DS_Store
+Thumbs.db
+desktop.ini
