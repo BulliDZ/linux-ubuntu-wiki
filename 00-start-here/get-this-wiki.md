@@ -25,7 +25,8 @@ tags: [start-here, git, obsidian]
 First time:
 
 ```bash
-git clone git@github.com:<ORG>/<REPO>.git ~/linux-ubuntu-wiki   # TODO-TEST: real repo path
+git clone git@github.com:BulliDZ/linux-ubuntu-wiki.git
+
 ```
 
 Every time after that, to get the latest pages:
@@ -79,13 +80,14 @@ gh auth login            # choose GitHub.com → SSH or HTTPS → log in via bro
 ### 3. Clone
 
 ```bash
-git clone git@github.com:<ORG>/<REPO>.git ~/linux-ubuntu-wiki   # TODO-TEST: real repo path
+git clone git@github.com:BulliDZ/linux-ubuntu-wiki.git
+ ~/linux-ubuntu-wiki   # TODO-TEST: real repo path
 ```
 
 ### 4. Install Obsidian and open the vault
 
 ```bash
-sudo snap install obsidian --classic   # TODO-TEST: verify on 24.04
+sudo snap install obsidian --classic
 ```
 
 Open Obsidian → **Open folder as vault** → select `~/linux-ubuntu-wiki`.

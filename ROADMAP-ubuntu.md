@@ -48,7 +48,7 @@ reference-quality examples of the template.
 - [ ] 11. `03-monitoring-and-hardware/whats-using-my-cpu-ram.md` — `htop`, `free`, kill a frozen app
 - [d] 12. `05-networking/concepts-no-commands.md` — concept page; diagrams in `_assets/network-home.svg`, `_assets/network-request-journey.svg`
 - [ ] 13. `05-networking/whats-my-ip-am-i-connected.md` — `ip a`, `ip r`, local vs public IP
-- [ ] 14. `05-networking/internet-doesnt-work-runbook.md` — **the layered flowchart** ⭐ highest value; reuse the journey diagram's 6 steps; write it *while* breaking a VM
+- [d] 14. `05-networking/internet-doesnt-work-runbook.md` — **the layered flowchart** ⭐ highest value; reuse the journey diagram's 6 steps; write it *while* breaking a VM
 - [ ] 15. `03-monitoring-and-hardware/disk-is-full.md` — `df`, `du`, `ncdu`
 - [ ] 16. `appendix/glossary.md`
 
