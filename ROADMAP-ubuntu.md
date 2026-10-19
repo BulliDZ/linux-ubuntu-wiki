@@ -3,11 +3,19 @@
 Status key: `[ ]` not started · `[d]` drafted, untested (has `TODO-TEST` markers) · `[~]` testing in progress · `[x]` done (tested + reviewed)
 
 Target OS: **Ubuntu 24.04 LTS**. Note 22.04 differences only where verified.
+
+> **Status (2026-10-19):** focus has moved to the Kali/OSINT track this week. Ubuntu pages
+> are in maintainer review; Vova updates them as each review finishes. Nothing new is
+> drafted here until the review pass and the snap clean-up below are done.
 Audience: 6 daily users, each admins their own machine. Success = fewer basic
 questions, faster intern onboarding (2–3 weeks), less mentor babysitting.
 
 > **WIP limit:** no more than **3 pages at `[d]`** at once. Test before drafting more.
 > A page leaves `[d]` only when `grep -n TODO-TEST <page>` returns nothing.
+>
+> **No snap.** Install instructions never use `snap`: it ships outdated, limited, or
+> irrelevant builds. Use apt, the vendor's official `.deb`/apt repo, Flatpak, or AppImage,
+> and say which and why. See "Snap clean-up" below.
 
 ---
 
@@ -20,13 +28,15 @@ questions, faster intern onboarding (2–3 weeks), less mentor babysitting.
 - [x] `_templates/concept-template.md` + concept-page rule in CONTRIBUTING
 - [x] CONTRIBUTING rule 7 (GitHub-renderable only) + maintainer tooling section
 - [x] `.gitignore` (Obsidian state, `_personal/`, Kali roadmap)
-- [ ] `.gitignore`: add `.obsidian/community-plugins.json` and `.obsidian/plugins/`
-- [x] `.gitattributes` (LF line endings)
-- [x] Shared `.obsidian/` config (relative links, no wikilinks, templates folder)
-- [ ] First commit + push to private GitHub repo ← **blocks testing of page 1**
+- [x] `.gitignore` rewritten as an allow-list (only `app.json`, `templates.json`, `core-plugins.json` tracked)
+- [ ] `.gitattributes` (LF line endings) — **not in the repo**; was marked done but never committed
+- [ ] Shared `.obsidian/` config — **`app.json` lost its link settings** (only `alwaysUpdateLinks` left). Restore `"useMarkdownLinks": true` and `"newLinkFormat": "relative"`, or Obsidian keeps writing links GitHub can't follow
+- [x] First push (history cleaned: no `*.LOCAL.md`, no personal Obsidian state)
+- [ ] Make the repo **private** — still public as of 2026-10-19
 - [ ] Add 6 readers with **Read** role
 - [ ] Protect `main` (optional at this scale, but cheap)
-- [ ] Test VM: `multipass launch 24.04 --name wiki-test` (+ a desktop VM for Obsidian checks)
+- [ ] Test VM — snap-free option to be decided (see Snap clean-up)
+- [ ] **Fix broken links** (27 links reach an existing page by the wrong path; see Review findings)
 
 ## Phase 1 — L1 core (the pages interns hit in week 1)
 
@@ -35,20 +45,20 @@ reference-quality examples of the template.
 
 - [d] 1. `00-start-here/get-this-wiki.md` — clone, open in Obsidian, update, recover from failed pull
 - [d] 1b. `00-start-here/obsidian-plugins.md` — core plugins, Dataview/Omnisearch, plugin security warning
-- [d] 1c. `00-start-here/practice-vm.md` — multipass sandbox, snapshot/restore, safe vs unsafe network breaks, desktop VM; replaces "labs (to be written)" in intern-path
+- [d] 1c. `00-start-here/practice-vm.md` — ⚠ uses snap (Multipass); needs a snap-free rewrite. Multipass sandbox, snapshot/restore, safe vs unsafe network breaks, desktop VM; replaces "labs (to be written)" in intern-path
 - [ ] 2. `00-start-here/which-os-and-how-this-works.md` — `os-release`, levels, how to read a page
 - [ ] 3. `00-start-here/terminal-survival.md` — navigation, tab-complete, history, Ctrl+C, copy/paste
 - [ ] 4. `00-start-here/getting-help.md` — `man`, `--help`, `tldr`
 - [ ] 5. `00-start-here/sudo.md` — what it does, when to use it, when NOT to
 - [ ] 6. `01-packages-and-software/updating-the-system.md` — apt update vs upgrade, reboot-required
-- [ ] 7. `01-packages-and-software/installing-software.md` — apt vs snap vs flatpak vs `.deb`
+- [ ] 7. `01-packages-and-software/installing-software.md` — apt vs vendor `.deb`/repo vs Flatpak vs AppImage; **why we don't use snap**, and how to remove snap-installed apps
 - [ ] 8. `04-files-dirs-users/files-and-folders-basics.md` — copy/move/delete safely, archives
 - [ ] 9. `04-files-dirs-users/finding-things.md` — `find`, `locate`, `grep` for the scared
 - [ ] 10. `04-files-dirs-users/permission-denied.md` — read `ls -l`, fix the error
 - [ ] 11. `03-monitoring-and-hardware/whats-using-my-cpu-ram.md` — `htop`, `free`, kill a frozen app
-- [d] 12. `05-networking/concepts-no-commands.md` — concept page; diagrams in `_assets/network-home.svg`, `_assets/network-request-journey.svg`
+- [d] 12. `05-networking/networking concepts.md` (renamed; consider `networking-concepts.md`, no space) — concept page; diagrams in `_assets/network-home.svg`, `_assets/network-request-journey.svg`
 - [ ] 13. `05-networking/whats-my-ip-am-i-connected.md` — `ip a`, `ip r`, local vs public IP
-- [d] 14. `05-networking/internet-doesnt-work-runbook.md` — **the layered flowchart** ⭐ highest value; reuse the journey diagram's 6 steps; write it *while* breaking a VM
+- [~] 14. `05-networking/internet-doesnt-work-runbook.md` — ⭐ highest value; drafted and revised by Vova; in review. Capture real output with the week 3 lab
 - [ ] 15. `03-monitoring-and-hardware/disk-is-full.md` — `df`, `du`, `ncdu`
 - [ ] 16. `appendix/glossary.md`
 
@@ -79,6 +89,22 @@ reference-quality examples of the template.
 - [ ] `06-ssh-remote/hardening-sshd.md` — no password auth, no root, fail2ban, socket activation note
 - [ ] `appendix/distro-differences.md` — 22.04 vs 24.04 single source of truth
 
+## Snap clean-up (blocks testing of the pages below)
+
+- [ ] `00-start-here/get-this-wiki.md` — Obsidian via snap → official `.deb` or Flatpak (Flathub); decide one and say how it updates
+- [ ] `00-start-here/practice-vm.md` — Multipass is snap-only on Linux → pick a snap-free VM tool (candidates: Incus from apt/Zabbly, libvirt + `virt-install` with cloud images, VirtualBox)
+- [ ] `labs/week3-network/` README, MENTORS, `_templates/lab-template.md`, CONTRIBUTING lab section, `onboarding/intern-path.md` — all say `multipass exec/shell`; update once the VM tool is chosen
+- [ ] CONTRIBUTING — add golden rule 8: no snap
+- [ ] `README.md` map row 01 — drop "snap" from the Packages section description
+
+## Review findings (2026-10-19)
+
+- [ ] Links: Obsidian rewrote many links to bare filenames (`get-this-wiki.md` from the repo root, `intern-path.md` from `labs/`). They work in Obsidian, 404 on GitHub. Restore `app.json` link settings, then fix the links once
+- [ ] Links: the concepts page's own two diagram links are broken (images don't render)
+- [ ] Links: everything pointing at `concepts-no-commands.md` now needs `networking concepts.md` (or the new no-space name)
+- [ ] Filenames: no spaces (`networking concepts.md` → `networking-concepts.md`); spaces force `%20` in links and quoting in the shell
+- [ ] `.gitattributes` missing (see Phase 0)
+
 ## Labs (`labs/`, hands-on checkpoint exercises)
 
 - [d] `labs/week3-network/` — break/check scripts (5 random persistent faults) + README (interns & mentors) + MENTORS.md answer key; **test all 5 faults before the first intern**
@@ -100,6 +126,9 @@ reference-quality examples of the template.
 ---
 
 ## Open questions to resolve as we go
+
+- [ ] Which snap-free VM tool replaces Multipass for practice VMs and labs?
+- [ ] Obsidian install: `.deb` (manual updates) or Flatpak (auto-updates, sandboxed)?
 
 - [ ] Confirm the real "services you must not stop" list per actual team machines
       (depends on who runs Docker / VPN / SSH server)
