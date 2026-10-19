@@ -151,6 +151,60 @@ For now, treat these as mandatory by hand.
 - [ ] Only GitHub-renderable Markdown; diagrams are exported images in `_assets/`
 - [ ] `grep -n TODO-TEST` on the page returns nothing
 
+## Maintainer setup (once per machine)
+
+Readers only clone and pull. Maintainers also need these steps, so that what you
+commit passes the same checks GitHub runs.
+
+1. **Clone with write access** (SSH):
+
+   ```bash
+   git clone git@github.com:BulliDZ/linux-ubuntu-wiki.git ~/linux-ubuntu-wiki
+   cd ~/linux-ubuntu-wiki
+   ```
+
+2. **Check Obsidian's link settings.** Settings → *Files and links*:
+   - *New link format*: **Relative path to file**
+   - *Use `[[Wikilinks]]`*: **off**
+   - *Automatically update internal links*: **on**
+
+   These are stored in `.obsidian/app.json`. If they change, Obsidian silently writes
+   links that work in Obsidian but 404 on GitHub.
+
+3. **Run the link check** (needs only `python3`, which Ubuntu ships):
+
+   ```bash
+   python3 _maintainers/tools/check-links.py
+   ```
+
+   Expected: `0 error(s)`. Warnings are links to planned pages listed in
+   `ROADMAP-ubuntu.md`; they're fine. GitHub runs the same script on every push
+   (*Actions → Check links*).
+
+4. **Make it automatic** with a pre-commit hook, so a broken link never leaves your machine:
+
+   ```bash
+   cat > .git/hooks/pre-commit <<'EOF'
+   #!/bin/sh
+   exec python3 _maintainers/tools/check-links.py
+   EOF
+   chmod +x .git/hooks/pre-commit
+   ```
+
+   Hooks live in `.git/`, which isn't versioned, so every maintainer runs this once.
+   To skip it for a single commit (e.g. a work-in-progress you'll fix next):
+   `git commit --no-verify`.
+
+**After renaming or moving a page:**
+
+```bash
+python3 _maintainers/tools/fix-links.py --dry-run   # preview
+python3 _maintainers/tools/fix-links.py             # rewrite the links
+python3 _maintainers/tools/check-links.py           # confirm 0 errors
+```
+
+Then add the old filename to the `RENAMED` map at the top of `fix-links.py`.
+
 ## Maintainer tooling
 
 Community plugins run unsandboxed with your user's full access. Keep this list short.
@@ -162,6 +216,8 @@ Community plugins run unsandboxed with your user's full access. Keep this list s
 | **Excalidraw** (plugin) | Drawing networking diagrams | Keep sources in `_assets/src/`; **export SVG** to `_assets/` and link only the SVG |
 | **Templates** (core plugin) | Inserting `_templates/page-template.md` | Use this, not Templater — the template has no dynamic fields, and Templater executes code |
 | **pandoc** (CLI) | Exporting pages to `.docx` / `.pdf` | See [export to docx/pdf](_maintainers/export-to-docx-pdf.md) |
+| **check-links.py** (`_maintainers/tools/`) | Catching broken links, wikilinks, spaces in filenames | Must report 0 errors before you push; see Maintainer setup |
+| **fix-links.py** (`_maintainers/tools/`) | Repairing links after a rename or move | Add the old name to its `RENAMED` map |
 
 Do **not** commit `.obsidian/community-plugins.json` or `.obsidian/plugins/`.
 Plugin choices are personal; committing them causes pull conflicts for every reader.
