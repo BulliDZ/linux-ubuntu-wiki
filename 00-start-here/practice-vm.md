@@ -134,7 +134,7 @@ multipass info sandbox
 
 ## Breaking networking safely
 
-[Networking checkpoints](intern-path.md#week-3--networking) break the network on purpose. The catch: **`multipass shell` itself reaches the VM over the network.** Break the wrong thing and you've locked yourself out.
+[Networking checkpoints](../onboarding/intern-path.md#week-3--networking) break the network on purpose. The catch: **`multipass shell` itself reaches the VM over the network.** Break the wrong thing and you've locked yourself out.
 
 | What you break | Safe in Multipass? | Why |
 |----------------|--------------------|-----|
@@ -178,6 +178,6 @@ Download the **Ubuntu 24.04 Desktop** ISO from ubuntu.com, create a VM from it i
 
 ## Related
 
-- [Intern onboarding path](intern-path.md)
-- [Networking concepts, no commands](networking%20concepts.md)
+- [Intern onboarding path](../onboarding/intern-path.md)
+- [Networking concepts, no commands](../05-networking/networking-concepts.md)
 - [Get this wiki onto your machine](get-this-wiki.md)

@@ -25,7 +25,7 @@ tags:
 
 To open a website, six things must work **in order**: a link, an IP address, a reachable gateway, working DNS, a route out, and an open port. When "the internet is broken," exactly one of those six is broken, and the [runbook](internet-doesnt-work-runbook.md) finds which.
 
-![Opening a website: link → IP → gateway → DNS → route → port](network-request-journey.svg)
+![Opening a website: link → IP → gateway → DNS → route → port](../_assets/network-request-journey.svg)
 
 ## When you need this
 
@@ -33,7 +33,7 @@ Before the [troubleshooting runbook](internet-doesnt-work-runbook.md), before [w
 
 ## The big picture
 
-![Your laptop, your router, and the internet](network-home.svg)
+![Your laptop, your router, and the internet](../_assets/network-home.svg)
 
 Hold onto this one analogy: **the network is a postal system.** Every concept below has a counterpart in it.
 

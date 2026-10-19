@@ -81,5 +81,5 @@ The time taken doesn't matter. Guessing your way to a fix doesn't pass; give the
 
 ## Related
 
-- [Lab README](labs/week3-network/README.md)
+- [Lab README](README.md)
 - [The "internet doesn't work" runbook](../../05-networking/internet-doesnt-work-runbook.md)

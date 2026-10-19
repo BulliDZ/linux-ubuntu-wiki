@@ -160,5 +160,5 @@ A successful export prints nothing and leaves the file. Warnings look like this:
 
 ## Related
 
-- [CONTRIBUTING — maintainer tooling](CONTRIBUTING.md#maintainer-tooling)
-- [Useful Obsidian plugins](obsidian-plugins.md)
+- [CONTRIBUTING — maintainer tooling](../CONTRIBUTING.md#maintainer-tooling)
+- [Useful Obsidian plugins](../00-start-here/obsidian-plugins.md)

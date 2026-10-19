@@ -15,16 +15,16 @@ Where 22.04 LTS still differs in a way that bites, a page calls it out explicitl
 
 ## Start here
 
-1. **[Get this wiki onto your machine](get-this-wiki.md)** — clone, open
+1. **[Get this wiki onto your machine](00-start-here/get-this-wiki.md)** — clone, open
    in Obsidian, keep it updated, and recover if `git pull` ever fails.
-2. **[Useful Obsidian plugins](obsidian-plugins.md)** — what's built in, what's
+2. **[Useful Obsidian plugins](00-start-here/obsidian-plugins.md)** — what's built in, what's
    worth adding, and why community plugins need care.
-3. **[Get a throwaway VM you're allowed to break](practice-vm.md)** — try any
+3. **[Get a throwaway VM you're allowed to break](00-start-here/practice-vm.md)** — try any
    command here before running it on your real machine.
 4. **[Which Ubuntu am I on + how this wiki works](00-start-here/which-os-and-how-this-works.md)**
 5. New to the terminal? **[Terminal survival](00-start-here/terminal-survival.md)**
 
-If you're a new intern, follow the **[onboarding path](intern-path.md)**
+If you're a new intern, follow the **[onboarding path](onboarding/intern-path.md)**
 in order instead of browsing randomly.
 
 ---
@@ -45,7 +45,7 @@ changes the system has a **risk** tag in its frontmatter (`read-only`,
 
 Most pages are **how-to** pages: commands, what the output means, what to do when it
 fails. A few are **concept** pages (`type: concept`): no commands, just the mental model
-the how-to pages assume — e.g. [networking concepts](concepts-no-commands.md).
+the how-to pages assume — e.g. [networking concepts](05-networking/networking-concepts.md).
 Read those first when a section has one.
 
 ---

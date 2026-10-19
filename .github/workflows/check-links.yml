@@ -1,0 +1,13 @@
+name: Check links
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  links:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+      - name: Check wiki links and filenames
+        run: python3 _maintainers/tools/check-links.py

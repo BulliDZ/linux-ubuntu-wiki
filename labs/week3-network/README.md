@@ -12,7 +12,7 @@ tags: [labs, onboarding, networking]
 
 # Week 3 lab: the internet doesn't work
 
-A hands-on exercise for the [week 3 checkpoint](intern-path.md#week-3--networking). A script breaks the network in a throwaway VM in one of five realistic ways. The intern finds which one using the [runbook](../../05-networking/internet-doesnt-work-runbook.md) and fixes it. A second script confirms the fix.
+A hands-on exercise for the [week 3 checkpoint](../../onboarding/intern-path.md#week-3--networking). A script breaks the network in a throwaway VM in one of five realistic ways. The intern finds which one using the [runbook](../../05-networking/internet-doesnt-work-runbook.md) and fixes it. A second script confirms the fix.
 
 | File | Who uses it | What it does |
 |------|-------------|--------------|
@@ -33,7 +33,7 @@ Reading about networking isn't the same as fixing it. In this lab something real
 > [!WARNING]
 > Run this **only in a lab VM**, never on your own machine. The script refuses to run outside a VM, but don't rely on that.
 
-1. Make a fresh VM (see [Get a throwaway VM](practice-vm.md)):
+1. Make a fresh VM (see [Get a throwaway VM](../../00-start-here/practice-vm.md)):
 
    ```bash
    multipass launch 24.04 --name week3
@@ -117,7 +117,7 @@ It replaces "mentor breaks something by hand," which differs every time and is h
 
 ## Related
 
-- [Intern onboarding path](intern-path.md)
+- [Intern onboarding path](../../onboarding/intern-path.md)
 - [The "internet doesn't work" runbook](../../05-networking/internet-doesnt-work-runbook.md)
-- [Networking concepts, no commands](networking%20concepts.md)
-- [Get a throwaway VM](practice-vm.md)
+- [Networking concepts, no commands](../../05-networking/networking-concepts.md)
+- [Get a throwaway VM](../../00-start-here/practice-vm.md)

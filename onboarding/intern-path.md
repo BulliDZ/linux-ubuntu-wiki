@@ -25,8 +25,8 @@ weeks you can handle your own machine without asking someone to sit with you.
 ## Week 1 — Survive
 
 **Read:**
-- [Get a throwaway VM](practice-vm.md) — set this up first
-- [Get this wiki](get-this-wiki.md)
+- [Get a throwaway VM](../00-start-here/practice-vm.md) — set this up first
+- [Get this wiki](../00-start-here/get-this-wiki.md)
 - [Which Ubuntu am I on + how this works](../00-start-here/which-os-and-how-this-works.md)
 - [Terminal survival](../00-start-here/terminal-survival.md)
 - [Getting help](../00-start-here/getting-help.md)
@@ -57,14 +57,14 @@ weeks you can handle your own machine without asking someone to sit with you.
 ## Week 3 — Networking
 
 **Read:**
-- [Networking concepts (no commands)](networking%20concepts.md)
+- [Networking concepts (no commands)](../05-networking/networking-concepts.md)
 - [What's my IP / am I connected](../05-networking/whats-my-ip-am-i-connected.md)
 - [Connections and ports](../05-networking/connections-and-ports.md)
 - [The "internet doesn't work" runbook](../05-networking/internet-doesnt-work-runbook.md)
 
 **Checkpoint:**
 - [ ] Draw your machine → router → internet and label IP, gateway, DNS
-- [ ] Complete the [week 3 lab](labs/week3-network/README.md): a script breaks your VM's
+- [ ] Complete the [week 3 lab](../labs/week3-network/README.md): a script breaks your VM's
       network in one of five ways — diagnose it by walking the runbook out loud, step by
       step, fix it, and get a `PASS` from the check script
 - [ ] Show what's listening on your machine and explain two of the entries
@@ -92,7 +92,7 @@ Never run destructive commands on a machine you need. Use a disposable VM:
   then `multipass shell sandbox`. Blew it up? `multipass delete sandbox --purge` and relaunch.
 - Or any VM in VirtualBox/GNOME Boxes with a snapshot you revert to.
 
-Full setup, snapshots, and which network breaks are safe: **[Get a throwaway VM](practice-vm.md)**.
+Full setup, snapshots, and which network breaks are safe: **[Get a throwaway VM](../00-start-here/practice-vm.md)**.
 
 ---
 

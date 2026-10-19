@@ -29,14 +29,14 @@ questions, faster intern onboarding (2–3 weeks), less mentor babysitting.
 - [x] CONTRIBUTING rule 7 (GitHub-renderable only) + maintainer tooling section
 - [x] `.gitignore` (Obsidian state, `_personal/`, Kali roadmap)
 - [x] `.gitignore` rewritten as an allow-list (only `app.json`, `templates.json`, `core-plugins.json` tracked)
-- [ ] `.gitattributes` (LF line endings) — **not in the repo**; was marked done but never committed
-- [ ] Shared `.obsidian/` config — **`app.json` lost its link settings** (only `alwaysUpdateLinks` left). Restore `"useMarkdownLinks": true` and `"newLinkFormat": "relative"`, or Obsidian keeps writing links GitHub can't follow
+- [x] `.gitattributes` (LF line endings)
+- [x] Shared `.obsidian/app.json` restored: Markdown links, relative paths, attachments into `_assets/`
 - [x] First push (history cleaned: no `*.LOCAL.md`, no personal Obsidian state)
 - [ ] Make the repo **private** — still public as of 2026-10-19
 - [ ] Add 6 readers with **Read** role
 - [ ] Protect `main` (optional at this scale, but cheap)
 - [ ] Test VM — snap-free option to be decided (see Snap clean-up)
-- [ ] **Fix broken links** (27 links reach an existing page by the wrong path; see Review findings)
+- [x] Fixed 27 broken links; `_maintainers/tools/check-links.py` + GitHub Action now check every push
 
 ## Phase 1 — L1 core (the pages interns hit in week 1)
 
@@ -56,7 +56,7 @@ reference-quality examples of the template.
 - [ ] 9. `04-files-dirs-users/finding-things.md` — `find`, `locate`, `grep` for the scared
 - [ ] 10. `04-files-dirs-users/permission-denied.md` — read `ls -l`, fix the error
 - [ ] 11. `03-monitoring-and-hardware/whats-using-my-cpu-ram.md` — `htop`, `free`, kill a frozen app
-- [d] 12. `05-networking/networking concepts.md` (renamed; consider `networking-concepts.md`, no space) — concept page; diagrams in `_assets/network-home.svg`, `_assets/network-request-journey.svg`
+- [d] 12. `05-networking/networking-concepts.md` — concept page; diagrams in `_assets/network-home.svg`, `_assets/network-request-journey.svg`
 - [ ] 13. `05-networking/whats-my-ip-am-i-connected.md` — `ip a`, `ip r`, local vs public IP
 - [~] 14. `05-networking/internet-doesnt-work-runbook.md` — ⭐ highest value; drafted and revised by Vova; in review. Capture real output with the week 3 lab
 - [ ] 15. `03-monitoring-and-hardware/disk-is-full.md` — `df`, `du`, `ncdu`
@@ -99,11 +99,10 @@ reference-quality examples of the template.
 
 ## Review findings (2026-10-19)
 
-- [ ] Links: Obsidian rewrote many links to bare filenames (`get-this-wiki.md` from the repo root, `intern-path.md` from `labs/`). They work in Obsidian, 404 on GitHub. Restore `app.json` link settings, then fix the links once
-- [ ] Links: the concepts page's own two diagram links are broken (images don't render)
-- [ ] Links: everything pointing at `concepts-no-commands.md` now needs `networking concepts.md` (or the new no-space name)
-- [ ] Filenames: no spaces (`networking concepts.md` → `networking-concepts.md`); spaces force `%20` in links and quoting in the shell
-- [ ] `.gitattributes` missing (see Phase 0)
+- [x] Links: Obsidian had rewritten links as bare filenames (worked in Obsidian, 404 on GitHub). Fixed, and `app.json` restored so it doesn't recur
+- [x] Concepts page renamed to `networking-concepts.md` (no space); its diagrams render again
+- [x] `.gitattributes` added
+- [ ] Turn on branch protection for `main` with the **Check links** status check required (Settings → Branches), so a broken link can't land on `main`
 
 ## Labs (`labs/`, hands-on checkpoint exercises)
 

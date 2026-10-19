@@ -56,7 +56,7 @@ To install: **Settings → Community plugins → Turn on community plugins → B
 | **Omnisearch** | Fuzzy, typo-tolerant keyword search that ranks results better than core Search. Not AI.                   | Readers who search a lot |
 | **QuickAdd** | Hotkeys to capture quick notes into `_personal/`                                                          | Optional, personal note-taking only |
 
-Plugins for *writing* pages (Linter, Advanced Tables, Excalidraw) aren't listed here because readers don't edit shared pages. Maintainers: see [CONTRIBUTING](CONTRIBUTING.md#maintainer-tooling).
+Plugins for *writing* pages (Linter, Advanced Tables, Excalidraw) aren't listed here because readers don't edit shared pages. Maintainers: see [CONTRIBUTING](../CONTRIBUTING.md#maintainer-tooling).
 
 > [!WARNING]
 > **Don't use Obsidian Git** (or any auto-commit plugin) on this repo. It's built to commit and push on a timer. You have read-only access, so the best case is constant failed pushes and noise. The worst case is local commits that make your next `git pull` fail. Update with `git pull` in a terminal.

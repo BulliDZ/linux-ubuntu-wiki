@@ -52,7 +52,7 @@ curl -sSI https://example.com     # 6. Port: can I actually connect to a website
 Yes, step 5 runs before step 4. That's on purpose: if you can't reach `1.1.1.1` by IP, DNS can't work either, so test the road before the phone book. See [step 4](#step-4--dns) for why.
 
 > [!TIP]
-> Not sure what an IP, gateway, or DNS server is? Read [networking concepts](concepts-no-commands.md) first. Ten minutes there saves an hour here.
+> Not sure what an IP, gateway, or DNS server is? Read [networking concepts](networking-concepts.md) first. Ten minutes there saves an hour here.
 
 ## When you need this
 
@@ -308,7 +308,7 @@ lo               UNKNOWN        127.0.0.1/8
 wlp2s0           UP             192.168.1.23/24
 ```
 
-- `192.168.1.23` = your address. `/24` = your subnet size (see [concepts](concepts-no-commands.md#subnet-your-street)).
+- `192.168.1.23` = your address. `/24` = your subnet size (see [concepts](networking-concepts.md#subnet-your-street)).
 - `169.254.x.x` here = DHCP failed (step 2).
 
 **`ip route show default`**
@@ -378,7 +378,7 @@ Everything above uses IPv4 (`-4`, `1.1.1.1`). If IPv4 works and some sites still
 
 ## Related
 
-- [Networking concepts, no commands](concepts-no-commands.md): what each step *is*
+- [Networking concepts, no commands](networking-concepts.md): what each step *is*
 - [Week 3 lab: the internet doesn't work](../labs/week3-network/README.md): practise this runbook on a deliberately broken VM
 - [What's my IP / am I connected](whats-my-ip-am-i-connected.md)
 - [DNS on Ubuntu](dns-on-ubuntu.md): systemd-resolved in depth

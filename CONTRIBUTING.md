@@ -12,6 +12,9 @@ pages consistent, correct, and safe to copy-paste from.
    runs it. Delete those notes once the team is fully on 24.04.
 3. **Relative links only.** `../05-networking/ports.md`, never a full `https://github.com/...`
    URL. Absolute links break in Obsidian and break again if the repo ever moves.
+   Links are checked on every push (`python3 _maintainers/tools/check-links.py`). After
+   renaming or moving a page, run `_maintainers/tools/fix-links.py`, and add the old
+   name to its `RENAMED` map. Filenames are kebab-case: **no spaces**.
 4. **No `[[wikilinks]]`.** The vault is configured for standard Markdown links so GitHub
    renders them. Obsidian inserts them for you with this config.
 5. **Callouts: only the five GitHub supports** — `> [!NOTE]`, `> [!TIP]`,
@@ -144,6 +147,7 @@ For now, treat these as mandatory by hand.
 - [ ] `risk` correct; every `changes-system`/`destructive` command has a `> [!WARNING]`
 - [ ] Links to ≥1 related page
 - [ ] No secrets, no absolute links, no non-standard callouts
+- [ ] `python3 _maintainers/tools/check-links.py` reports 0 errors
 - [ ] Only GitHub-renderable Markdown; diagrams are exported images in `_assets/`
 - [ ] `grep -n TODO-TEST` on the page returns nothing
 
