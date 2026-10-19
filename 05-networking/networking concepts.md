@@ -3,19 +3,17 @@ title: Networking concepts, no commands
 level: L1
 type: concept
 distros:
-  ubuntu: ["24.04"]
+  ubuntu:
+    - "24.04"
 requires: []
 risk: read-only
-last_tested: TODO-TEST   # no commands to run; set the date a second person reviewed the facts
-tags: [networking, concepts, onboarding]
+last_tested: Oct 19
+tags:
+  - networking
+  - concepts
+  - onboarding
 ---
 
-<!-- TODO-TEST: before publishing, `grep -n TODO-TEST` this file and resolve every hit:
-  1. Have someone who isn't you read it cold and say where they got lost
-  2. Re-check the systemd-resolved 127.0.0.53 note on a clean 24.04 install
-  3. Confirm the two SVGs render on GitHub (light AND dark theme) and in a pandoc export
-  4. Set last_tested to the review date
--->
 
 # Networking concepts, no commands
 
@@ -86,18 +84,18 @@ Computers connect to IP addresses, while humans type names. **DNS** turns `examp
 If DNS breaks, the network still works, but names don't. The classic symptom: a site won't open by name, but things that use addresses directly still work. It's one of the most common "the internet is down" causes, and among the easiest to fix.
 
 > [!NOTE]
-> **On Ubuntu**, your DNS server will look like **`127.0.0.53`**. That's not a mistake: it's a local helper (`systemd-resolved`) that forwards your questions to the real DNS server. See [DNS on Ubuntu](dns-on-ubuntu.md). TODO-TEST
+> **On Ubuntu**, your DNS server will look like **`127.0.0.53`**. That's not a mistake: it's a local helper (`systemd-resolved`) that forwards your questions to the real DNS server. See [DNS on Ubuntu](dns-on-ubuntu.md).
 
 ### Port: the flat number inside the building
 
 One machine runs many services at once. A **port** is a number (0–65535) that says *which service* a packet is for. The IP gets you to the building; the port gets you to the right door.
 
-| Port | Service |
-|------|---------|
-| 22 | SSH (remote login) |
-| 53 | DNS |
-| 80 | HTTP (web, unencrypted) |
-| 443 | HTTPS (web, encrypted) |
+| Port | Service                 |
+| ---- | ----------------------- |
+| 22   | SSH (remote login)      |
+| 53   | DNS                     |
+| 80   | HTTP (web, unencrypted) |
+| 443  | HTTPS (web, encrypted)  |
 
 A service "**listening** on port 443" means it's waiting for visitors at door 443.
 
@@ -124,8 +122,8 @@ You understand this page if you can answer these without looking back:
 
 1. Your laptop shows `192.168.1.23`, and a website says your IP is `203.0.113.45`. Which is wrong?
 2. Wi-Fi shows connected, and your address is `169.254.12.7`. Where is the problem?
-3. `ping 198.51.100.10` works, but the browser can't open `example.com`. Which of the six steps failed?
-4. Why can't your friend reach the web server running on your laptop at home?
+3. `ping 198.51.100.10` works, but the browser can't open `example.com`. Which of the six steps failed? 
+4. Why can't your friend reach the web server running on your laptop at home? 
 
 <details>
 <summary>Answers</summary>

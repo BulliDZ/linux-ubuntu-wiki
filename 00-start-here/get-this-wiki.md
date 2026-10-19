@@ -2,20 +2,24 @@
 title: Get this wiki onto your machine
 level: L2
 distros:
-  ubuntu: ["24.04"]
-requires: [git]
+  ubuntu:
+    - "24.04"
+requires:
+  - git
 risk: changes-system
-last_tested: TODO-TEST   # set after running every command on a clean 24.04 VM
-tags: [start-here, git, obsidian]
+last_tested: Oct 19
+tags:
+  - start-here
+  - git
+  - obsidian
 ---
 
 <!-- TODO-TEST: before publishing, `grep -n TODO-TEST` this file and resolve every hit:
-  1. Replace <ORG>/<REPO> with the real repo path (4 places)
-  2. Confirm the default branch is `main` (used in the reset --hard command)
-  3. Confirm `sudo snap install obsidian --classic` works on 24.04
-  4. Confirm the 22.04 `gh` note is still true, or delete it
-  5. Paste REAL output from your VM into "What the output means"
-  6. Set last_tested to the test date
+
+  1. Confirm `sudo snap install obsidian --classic` works on 24.04
+  2. Confirm the 22.04 `gh` note is still true, or delete it
+  3. Paste REAL output from your VM into "What the output means"
+  4. Set last_tested to the test date
 -->
 
 # Get this wiki onto your machine
@@ -81,14 +85,12 @@ gh auth login            # choose GitHub.com → SSH or HTTPS → log in via bro
 
 ```bash
 git clone git@github.com:BulliDZ/linux-ubuntu-wiki.git
- ~/linux-ubuntu-wiki   # TODO-TEST: real repo path
+ ~/linux-ubuntu-wiki
 ```
 
 ### 4. Install Obsidian and open the vault
 
-```bash
-sudo snap install obsidian --classic
-```
+Recommended: Install Obsidian as AppImage. See instructions here: https://obsidian.md/help/install
 
 Open Obsidian → **Open folder as vault** → select `~/linux-ubuntu-wiki`.
 When Obsidian asks, choose **Trust author and enable plugins**. The shared settings (relative links, templates folder) only take effect if you do.
@@ -151,7 +153,7 @@ Aborting
   > This **permanently discards** every change you made to tracked files. `_personal/` is untouched.
 
   ```bash
-  git fetch origin && git reset --hard origin/main   # TODO-TEST: confirm branch name
+  git fetch origin && git reset --hard origin/main  
   ```
 
 - **`fatal: not a git repository`** → you're in the wrong folder. Run `cd ~/linux-ubuntu-wiki` first.

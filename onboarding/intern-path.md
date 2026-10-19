@@ -10,7 +10,7 @@ last_tested: 2026-10-15
 tags: [onboarding]
 ---
 
-# Intern onboarding path
+# Intern on-boarding path
 
 Follow this in order. Don't browse randomly yet — that comes later. Each week ends
 with a **checkpoint** you complete and show a mentor. The goal is that after ~2–3
@@ -57,7 +57,7 @@ weeks you can handle your own machine without asking someone to sit with you.
 ## Week 3 — Networking
 
 **Read:**
-- [Networking concepts (no commands)](concepts-no-commands.md)
+- [Networking concepts (no commands)](networking%20concepts.md)
 - [What's my IP / am I connected](../05-networking/whats-my-ip-am-i-connected.md)
 - [Connections and ports](../05-networking/connections-and-ports.md)
 - [The "internet doesn't work" runbook](../05-networking/internet-doesnt-work-runbook.md)

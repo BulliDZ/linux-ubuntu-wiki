@@ -119,5 +119,5 @@ It replaces "mentor breaks something by hand," which differs every time and is h
 
 - [Intern onboarding path](intern-path.md)
 - [The "internet doesn't work" runbook](../../05-networking/internet-doesnt-work-runbook.md)
-- [Networking concepts, no commands](concepts-no-commands.md)
+- [Networking concepts, no commands](networking%20concepts.md)
 - [Get a throwaway VM](practice-vm.md)

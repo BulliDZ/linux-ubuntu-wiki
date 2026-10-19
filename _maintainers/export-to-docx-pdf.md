@@ -2,11 +2,19 @@
 title: Export wiki pages to .docx or .pdf with pandoc
 level: L2
 distros:
-  ubuntu: ["24.04"]
-requires: [pandoc, texlive-xetex, librsvg2-bin]
+  ubuntu:
+    - "24.04"
+requires:
+  - pandoc
+  - texlive-xetex
+  - librsvg2-bin
 risk: changes-system
-last_tested: TODO-TEST   # set after running every command on a clean 24.04 VM
-tags: [maintainers, pandoc, export, obsidian]
+last_tested: Oct 19
+tags:
+  - maintainers
+  - pandoc
+  - export
+  - obsidian
 ---
 # Export wiki pages to .docx or .pdf with pandoc
 

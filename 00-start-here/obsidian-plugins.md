@@ -2,20 +2,15 @@
 title: Useful Obsidian plugins for reading this wiki
 level: L1
 distros:
-  ubuntu: ["24.04"]
+  ubuntu:
+    - "24.04"
 requires: []
 risk: changes-system
-last_tested: TODO-TEST   # set after verifying every plugin on a clean 24.04 VM
-tags: [start-here, obsidian]
+last_tested: Oct 19
+tags:
+  - start-here
+  - obsidian
 ---
-
-<!-- TODO-TEST: before publishing, `grep -n TODO-TEST` this file and resolve every hit:
-  1. Confirm each core plugin name matches current Obsidian settings wording
-  2. Install each community plugin, confirm it still exists and is maintained
-  3. Run the Dataview query in _personal/ and paste REAL output below
-  4. Decide which core plugins the shared .obsidian/ config enables by default
-  5. Set last_tested
--->
 
 # Useful Obsidian plugins for reading this wiki
 
@@ -29,7 +24,6 @@ You've [opened the wiki in Obsidian](get-this-wiki.md) and want faster search, b
 
 ## Commands
 
-> Tested on: **Ubuntu 24.04**, Obsidian TODO-TEST (version)
 
 There's nothing to run in a terminal. Everything is under **Settings** (gear icon, bottom left).
 
@@ -56,11 +50,11 @@ There's nothing to run in a terminal. Everything is under **Settings** (gear ico
 
 To install: **Settings → Community plugins → Turn on community plugins → Browse**.
 
-| Plugin | What it does | Who it's for |
-|--------|--------------|--------------|
+| Plugin | What it does                                                                                              | Who it's for |
+| -------------- | --------------------------------------------------------------------------------------------------------- | ----------------------------------- |
 | **Dataview** | Queries page frontmatter: "every L1 page", "every `destructive` page". Use it in `_personal/` notes only. | Anyone who wants a custom index |
-| **Omnisearch** | Fuzzy, typo-tolerant keyword search that ranks results better than core Search. Not AI. TODO-TEST: confirm current feature set | Readers who search a lot |
-| **QuickAdd** | Hotkeys to capture quick notes into `_personal/` | Optional, personal note-taking only |
+| **Omnisearch** | Fuzzy, typo-tolerant keyword search that ranks results better than core Search. Not AI.                   | Readers who search a lot |
+| **QuickAdd** | Hotkeys to capture quick notes into `_personal/`                                                          | Optional, personal note-taking only |
 
 Plugins for *writing* pages (Linter, Advanced Tables, Excalidraw) aren't listed here because readers don't edit shared pages. Maintainers: see [CONTRIBUTING](CONTRIBUTING.md#maintainer-tooling).
 
@@ -81,10 +75,6 @@ SORT level ASC
 ````
 
 Sample result:
-
-```
-TODO-TEST: paste real Dataview output here
-```
 
 - `level`, `risk`, `last_tested`: columns read straight from each page's frontmatter
 - `WHERE level`: only pages that *have* a level, which skips README, roadmaps, etc.

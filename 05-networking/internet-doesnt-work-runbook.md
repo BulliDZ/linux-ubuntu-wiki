@@ -1,13 +1,24 @@
 ---
 title: The "internet doesn't work" runbook
-level: L2                 # steps 1–6 are L1; "Go deeper" is L2
+level: L2
 type: how-to
 distros:
-  ubuntu: ["24.04"]
-requires: [iproute2, iputils-ping, iputils-tracepath, systemd-resolved, curl, netcat-openbsd]
-risk: changes-system      # diagnosis is read-only; the fixes change the system
+  ubuntu:
+    - "24.04"
+requires:
+  - iproute2
+  - iputils-ping
+  - iputils-tracepath
+  - systemd-resolved
+  - curl
+  - netcat-openbsd
+risk: changes-system
 last_tested: TODO-TEST
-tags: [networking, troubleshooting, runbook, dns]
+tags:
+  - networking
+  - troubleshooting
+  - runbook
+  - dns
 ---
 
 <!-- TODO-TEST: before publishing, `grep -n TODO-TEST` this file and resolve every hit:

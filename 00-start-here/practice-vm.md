@@ -2,11 +2,18 @@
 title: Get a throwaway VM you're allowed to break
 level: L2
 distros:
-  ubuntu: ["24.04"]
-requires: [snapd]
+  ubuntu:
+    - "24.04"
+requires:
+  - snapd
 risk: changes-system
-last_tested: TODO-TEST   # set after running every command on a 24.04 host
-tags: [start-here, labs, multipass, vm, testing]
+last_tested: TODO-TEST
+tags:
+  - start-here
+  - labs
+  - multipass
+  - vm
+  - testing
 ---
 
 <!-- TODO-TEST: before publishing, `grep -n TODO-TEST` this file and resolve every hit:
@@ -23,7 +30,7 @@ tags: [start-here, labs, multipass, vm, testing]
 ## TL;DR
 
 ```bash
-sudo snap install multipass
+sudo apt install multipass
 multipass launch 24.04 --name sandbox --cpus 2 --memory 4G --disk 20G
 multipass shell sandbox
 ```
@@ -172,5 +179,5 @@ Download the **Ubuntu 24.04 Desktop** ISO from ubuntu.com, create a VM from it i
 ## Related
 
 - [Intern onboarding path](intern-path.md)
-- [Networking concepts, no commands](concepts-no-commands.md)
+- [Networking concepts, no commands](networking%20concepts.md)
 - [Get this wiki onto your machine](get-this-wiki.md)
